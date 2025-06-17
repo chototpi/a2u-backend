@@ -7,8 +7,12 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const stellar_sdk_1 = __importDefault(require("@stellar/stellar-sdk"));
 const axios_1 = __importDefault(require("axios"));
+const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)({
+    origin: "https://chototpi.site",
+}));
 app.use(express_1.default.json());
 const PI_API_KEY = process.env.PI_API_KEY;
 const APP_PUBLIC_KEY = process.env.APP_PUBLIC_KEY;
